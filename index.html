@@ -1,180 +1,1105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ECS Sir | India's No 1 Tennis & Cricket Expert</title>
 
-<meta name="description" content="All Cricket & Tennis Matches Free Reports">
+<meta name="description"
+content="All Cricket & Tennis Matches Free Reports">
+
+<meta name="theme-color" content="#0b0f2b">
+
+<meta property="og:title"
+content="ECS Sir">
+
+<meta property="og:description"
+content="India's No 1 Tennis & Cricket Expert">
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:image"
+content="dp.webp">
+
+<meta property="og:url"
+content="https://YOUR_USERNAME.github.io/">
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="preload"
+href="dp.webp"
+as="image">
 
 <!-- Facebook Meta Pixel -->
+
 <script>
+
 (function(f,b,e,v,n,t,s){
+
 if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+n=f.fbq=function(){
+
+n.callMethod?
+
+n.callMethod.apply(n,arguments):
+
+n.queue.push(arguments);
+
+};
+
 if(!f._fbq)f._fbq=n;
+
 n.push=n;
-n.loaded=!0;
+
+n.loaded=true;
+
 n.version='2.0';
+
 n.queue=[];
+
 t=b.createElement(e);
-t.async=!0;
+
+t.async=true;
+
 t.src=v;
+
 s=b.getElementsByTagName(e)[0];
+
 s.parentNode.insertBefore(t,s);
-})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+})(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
 if(!window.__PIXEL_INITIALIZED__){
+
 window.__PIXEL_INITIALIZED__=true;
+
 fbq('init','YOUR_PIXEL_ID');
+
 fbq('track','PageView');
+
 }
+
 </script>
 
 <noscript>
-<img height="1" width="1" style="display:none"
+
+<img height="1"
+width="1"
+style="display:none"
 src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+
 </noscript>
 
 <style>
 
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
 }
 
 :root{
---yellow:#FFD54F;
---pink1:#ff4fa3;
---pink2:#ff7abf;
---pink3:#ff2d92;
---text:#ffffff;
---card:rgba(14,20,45,.82);
+
+--bg1:#090b24;
+
+--bg2:#132f68;
+
+--bg3:#1b0f47;
+
+--glass:rgba(255,255,255,.08);
+
+--glassBorder:rgba(255,255,255,.12);
+
+--gold:#ffd34e;
+
+--goldDark:#ffbe0b;
+
+--pink:#ff4fa3;
+
+--pink2:#ff6ab8;
+
+--cyan:#72f4ff;
+
+--green:#48ff9b;
+
+--white:#ffffff;
+
+--text:#f5f7fb;
+
+--muted:#b8c7da;
+
+--shadow:0 25px 60px rgba(0,0,0,.45);
+
 }
 
-html,body{
-height:100%;
-overflow:hidden;
-font-family:Trebuchet MS,Verdana,Arial,sans-serif;
-}
+html{
 
-/* Animated Sports Background */
+scroll-behavior:smooth;
+
+}
 
 body{
 
-background:
-linear-gradient(-45deg,
-#3c096c,
-#5a189a,
-#4361ee,
-#00b4d8,
-#3c096c);
+width:100%;
 
-background-size:400% 400%;
-animation:bgMove 18s ease infinite;
+min-height:100vh;
+
+overflow-x:hidden;
+
+font-family:
+
+system-ui,
+
+-apple-system,
+
+Segoe UI,
+
+Roboto,
+
+Arial,
+
+sans-serif;
+
+background:linear-gradient(
+
+135deg,
+
+var(--bg1),
+
+var(--bg2),
+
+var(--bg3)
+
+);
+
+background-size:300% 300%;
+
+animation:gradientMove 18s ease infinite;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-padding:18px;
+
+padding:20px;
+
 position:relative;
 
-}
-
-/* Floating Balls */
-
-body::before,
-body::after{
-
-content:"";
-position:absolute;
-border-radius:50%;
-filter:blur(10px);
-opacity:.25;
-animation:float 8s ease-in-out infinite;
+color:var(--text);
 
 }
+
+/* Animated background layer */
 
 body::before{
 
-width:180px;
-height:180px;
-background:#FFD54F;
-top:-50px;
-left:-40px;
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle at 20% 20%,
+
+rgba(255,212,78,.15),
+
+transparent 35%),
+
+radial-gradient(circle at 80% 40%,
+
+rgba(114,244,255,.12),
+
+transparent 30%),
+
+radial-gradient(circle at 50% 100%,
+
+rgba(255,79,163,.10),
+
+transparent 40%);
+
+animation:bgFloat 16s ease-in-out infinite;
 
 }
+
+/* Stadium glow */
 
 body::after{
 
-width:220px;
-height:220px;
-background:#ff5ca8;
-bottom:-70px;
-right:-60px;
-animation-delay:2s;
+content:"";
+
+position:fixed;
+
+left:-20%;
+
+right:-20%;
+
+bottom:-180px;
+
+height:320px;
+
+background:
+
+radial-gradient(
+
+ellipse at center,
+
+rgba(0,255,170,.10),
+
+transparent 70%
+
+);
+
+filter:blur(20px);
+
+pointer-events:none;
 
 }
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+@keyframes bgFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+}
+/* ================================
+   STADIUM LIGHT EFFECTS
+================================ */
+
+.stadium-light{
+
+position:fixed;
+
+top:-120px;
+
+width:260px;
+
+height:520px;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+filter:blur(35px);
+
+opacity:.45;
+
+transform-origin:top;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+
+.light-left{
+
+left:-80px;
+
+transform:rotate(25deg);
+
+animation:lightMoveLeft 8s ease-in-out infinite;
+
+}
+
+
+.light-right{
+
+right:-80px;
+
+transform:rotate(-25deg);
+
+animation:lightMoveRight 9s ease-in-out infinite;
+
+}
+
+
+@keyframes lightMoveLeft{
+
+0%,100%{
+
+transform:rotate(25deg) translateY(0);
+
+}
+
+50%{
+
+transform:rotate(15deg) translateY(30px);
+
+}
+
+}
+
+
+@keyframes lightMoveRight{
+
+0%,100%{
+
+transform:rotate(-25deg) translateY(0);
+
+}
+
+50%{
+
+transform:rotate(-15deg) translateY(30px);
+
+}
+
+}
+
+
+/* ================================
+   STADIUM FLOOR
+================================ */
+
+
+.stadium-floor{
+
+position:fixed;
+
+bottom:-180px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:700px;
+
+height:300px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+ellipse,
+
+rgba(0,255,150,.22),
+
+rgba(0,0,0,0)
+
+70%
+
+);
+
+filter:blur(20px);
+
+z-index:0;
+
+}
+
+
+/* ================================
+   FLOATING PARTICLES
+================================ */
+
+
+.particle{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.35;
+
+box-shadow:
+
+0 0 15px white;
+
+animation:
+
+particleFloat linear infinite;
+
+z-index:1;
+
+}
+
+
+.p1{
+
+left:12%;
+
+top:80%;
+
+animation-duration:12s;
+
+}
+
+
+.p2{
+
+left:25%;
+
+top:70%;
+
+width:5px;
+
+height:5px;
+
+animation-duration:15s;
+
+}
+
+
+.p3{
+
+right:18%;
+
+top:75%;
+
+animation-duration:10s;
+
+}
+
+
+.p4{
+
+right:35%;
+
+top:60%;
+
+width:6px;
+
+height:6px;
+
+animation-duration:18s;
+
+}
+
+
+.p5{
+
+left:55%;
+
+top:85%;
+
+width:4px;
+
+height:4px;
+
+animation-duration:13s;
+
+}
+
+
+
+@keyframes particleFloat{
+
+
+0%{
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+opacity:.2;
+
+}
+
+
+50%{
+
+opacity:.8;
+
+}
+
+
+100%{
+
+transform:
+
+translateY(-500px)
+
+scale(1.8);
+
+opacity:0;
+
+}
+
+
+}
+
+
+/* ================================
+   SPORTS ICONS
+================================ */
+
+
+.sport-ball{
+
+position:fixed;
+
+z-index:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:42px;
+
+filter:
+
+drop-shadow(0 0 15px rgba(255,255,255,.35));
+
+pointer-events:none;
+
+}
+
+
+.cricket-ball{
+
+left:-20px;
+
+top:35%;
+
+animation:
+
+cricketMove 10s ease-in-out infinite;
+
+}
+
+
+.tennis-ball{
+
+right:-15px;
+
+top:55%;
+
+animation:
+
+tennisMove 8s ease-in-out infinite;
+
+}
+
+
+
+@keyframes cricketMove{
+
+
+0%,100%{
+
+transform:
+
+translate(0,0)
+
+rotate(0deg);
+
+}
+
+
+50%{
+
+transform:
+
+translate(35px,-50px)
+
+rotate(180deg);
+
+}
+
+
+}
+
+
+
+@keyframes tennisMove{
+
+
+0%,100%{
+
+transform:
+
+translate(0,0)
+
+rotate(0deg);
+
+}
+
+
+50%{
+
+transform:
+
+translate(-35px,-70px)
+
+rotate(-180deg);
+
+}
+
+
+}
+
+
+/* ================================
+   MAIN CARD FOUNDATION
+================================ */
+
 
 .card{
 
 width:100%;
-max-width:420px;
 
-background:var(--card);
-backdrop-filter:blur(18px);
-
-padding:32px 24px;
-
-border-radius:28px;
-
-text-align:center;
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-0 20px 45px rgba(0,0,0,.35);
+max-width:430px;
 
 position:relative;
-z-index:2;
+
+z-index:5;
+
+background:
+
+linear-gradient(
+
+145deg,
+
+rgba(255,255,255,.12),
+
+rgba(255,255,255,.05)
+
+);
+
+
+border:
+
+1px solid var(--glassBorder);
+
+
+border-radius:30px;
+
+
+padding:30px 24px;
+
+
+backdrop-filter:blur(18px);
+
+
+-webkit-backdrop-filter:blur(18px);
+
+
+box-shadow:var(--shadow);
+
+
+overflow:hidden;
+
 
 }
 
-.dp{
 
-width:120px;
-height:120px;
+/* Card shine */
+
+
+.card::before{
+
+
+content:"";
+
+position:absolute;
+
+
+top:-80%;
+
+left:-40%;
+
+
+width:180%;
+
+height:100%;
+
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.12),
+
+transparent
+
+);
+
+
+transform:rotate(20deg);
+
+
+animation:
+
+cardShine 7s infinite;
+
+
+}
+
+
+
+@keyframes cardShine{
+
+
+0%{
+
+transform:
+
+translateX(-100%)
+
+rotate(20deg);
+
+}
+
+
+40%{
+
+transform:
+
+translateX(100%)
+
+rotate(20deg);
+
+}
+
+
+100%{
+
+transform:
+
+translateX(100%)
+
+rotate(20deg);
+
+}
+
+
+}
+
+
+/* Keep content above shine */
+
+
+.card > *{
+
+position:relative;
+
+z-index:2;
+
+}
+  /* ================================
+   PART 3 - PROFILE & TITLE SECTION
+================================ */
+
+
+/* Profile wrapper */
+
+.profile-area{
+
+text-align:center;
+
+}
+
+
+/* Animated profile ring */
+
+.profile-ring{
+
+width:140px;
+
+height:140px;
+
+margin:auto;
+
+border-radius:50%;
+
+padding:5px;
+
+background:
+
+linear-gradient(
+
+45deg,
+
+var(--gold),
+
+var(--pink),
+
+var(--cyan),
+
+var(--gold)
+
+);
+
+background-size:300% 300%;
+
+animation:
+
+ringMove 5s linear infinite;
+
+box-shadow:
+
+0 0 35px rgba(255,211,78,.45);
+
+}
+
+
+
+.profile-ring img{
+
+width:100%;
+
+height:100%;
 
 border-radius:50%;
 
 object-fit:cover;
 
-border:5px solid var(--yellow);
+border:5px solid #10152f;
 
-box-shadow:
-0 0 30px rgba(255,213,79,.45);
+display:block;
 
 }
 
-h1{
+
+
+@keyframes ringMove{
+
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+
+/* LIVE Badge */
+
+
+.live-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
 
 margin-top:18px;
 
-font-size:2.2rem;
+padding:7px 16px;
 
-font-family:Impact, Haettenschweiler, Arial Black, sans-serif;
+border-radius:50px;
+
+background:
+
+rgba(255,40,80,.15);
+
+border:
+
+1px solid rgba(255,80,100,.4);
+
+color:#ff6b85;
+
+font-weight:800;
+
+font-size:.85rem;
 
 letter-spacing:1px;
 
-color:#FFE66D;
+}
 
-text-shadow:
-0 2px 10px rgba(255,255,255,.2);
+
+
+.live-dot{
+
+width:9px;
+
+height:9px;
+
+border-radius:50%;
+
+background:#ff1744;
+
+box-shadow:
+
+0 0 15px #ff1744;
+
+animation:
+
+livePulse 1.5s infinite;
 
 }
+
+
+
+@keyframes livePulse{
+
+
+0%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+
+50%{
+
+transform:scale(1.7);
+
+opacity:.4;
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+/* Main title */
+
+
+.main-title{
+
+margin-top:18px;
+
+font-size:2.4rem;
+
+font-weight:950;
+
+font-family:
+
+Impact,
+
+Haettenschweiler,
+
+Arial Black,
+
+sans-serif;
+
+letter-spacing:1px;
+
+color:var(--gold);
+
+text-shadow:
+
+0 0 15px rgba(255,211,78,.45);
+
+animation:
+
+titleGlow 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes titleGlow{
+
+
+0%,100%{
+
+text-shadow:
+
+0 0 10px rgba(255,211,78,.3);
+
+}
+
+
+50%{
+
+text-shadow:
+
+0 0 25px rgba(255,211,78,.8);
+
+}
+
+}
+
+
+/* Tagline */
+
 
 .tagline{
 
@@ -182,183 +1107,621 @@ margin-top:12px;
 
 font-size:1rem;
 
-font-weight:700;
+font-weight:800;
 
-color:#B8F7FF;
+line-height:1.5;
 
-line-height:1.6;
+color:var(--cyan);
 
 }
 
-.counterBox{
+
+/* Subscriber box */
+
+
+.stats-box{
+
+margin-top:25px;
+
+padding:20px;
+
+border-radius:22px;
+
+background:
+
+rgba(255,255,255,.07);
+
+border:
+
+1px solid rgba(255,255,255,.12);
+
+}
+
+
+
+.stats-label{
+
+font-size:.9rem;
+
+color:var(--muted);
+
+}
+
+
+
+.subscriber-count{
+
+margin-top:8px;
+
+font-size:2.2rem;
+
+font-weight:950;
+
+color:var(--green);
+
+letter-spacing:1px;
+
+}
+
+/* ================================
+   PART 4 - BUTTON & CONTENT
+================================ */
+
+
+/* Description */
+
+.description{
 
 margin-top:24px;
 
-background:rgba(255,255,255,.08);
+font-size:1.05rem;
 
-padding:18px;
-
-border-radius:20px;
-
-}
-
-.counterLabel{
-
-font-size:.95rem;
-
-color:#d8d8d8;
-
-}
-
-.counter{
-
-margin-top:10px;
-
-font-size:2.1rem;
-
-font-weight:900;
-
-color:#90ffbf;
-
-}
-
-.desc{
-
-margin-top:22px;
+font-weight:700;
 
 line-height:1.7;
 
-font-size:1rem;
-
-color:#f4f4f4;
+color:var(--text);
 
 }
 
+
+
 /* Telegram Button */
 
-.btn{
+
+.telegram-btn{
 
 display:block;
 
 margin-top:30px;
 
-padding:18px;
+padding:18px 20px;
 
-border-radius:18px;
+border-radius:22px;
 
 text-decoration:none;
 
-font-size:1.08rem;
-
-font-family:"Trebuchet MS",Verdana,sans-serif;
+font-size:1.05rem;
 
 font-weight:900;
 
 letter-spacing:.5px;
 
-color:#fff8fd;
+font-family:
 
-background:linear-gradient(
+Trebuchet MS,
+
+Arial,
+
+sans-serif;
+
+
+color:white;
+
+
+background:
+
+linear-gradient(
+
 90deg,
-var(--pink1),
-var(--pink2),
-var(--pink3));
 
-background-size:200% 200%;
+#ff3f9b,
+
+#ff6bc1,
+
+#c63cff,
+
+#ff3f9b
+
+);
+
+
+background-size:300% 300%;
+
 
 box-shadow:
-0 10px 30px rgba(255,60,150,.45);
+
+0 15px 35px rgba(255,63,155,.45);
+
+
+position:relative;
+
+overflow:hidden;
+
 
 animation:
-pulse 2s infinite,
-pinkFlow 4s linear infinite;
 
-transition:.35s;
+telegramGradient 5s ease infinite,
+
+telegramPulse 2.2s ease-in-out infinite;
+
+
+}
+
+
+
+/* Shine effect */
+
+
+.telegram-btn::before{
+
+
+content:"";
+
+position:absolute;
+
+
+top:0;
+
+left:-100%;
+
+
+width:60%;
+
+height:100%;
+
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.55),
+
+transparent
+
+);
+
+
+animation:
+
+buttonShine 3.5s infinite;
+
 
 }
 
-.btn:hover{
 
-transform:translateY(-3px);
 
-box-shadow:
-0 14px 35px rgba(255,60,150,.55);
+
+.telegram-btn span{
+
+position:relative;
+
+z-index:2;
 
 }
+
+
+
+
+@keyframes telegramGradient{
+
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+
+}
+
+
+
+@keyframes telegramPulse{
+
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+
+}
+
+
+
+@keyframes buttonShine{
+
+
+0%{
+
+left:-100%;
+
+}
+
+
+35%{
+
+left:120%;
+
+}
+
+
+100%{
+
+left:120%;
+
+}
+
+}
+
+
+
+/* Trust Section */
+
+
+.trust-box{
+
+
+margin-top:25px;
+
+
+padding:15px;
+
+
+border-radius:18px;
+
+
+background:
+
+rgba(255,255,255,.06);
+
+
+color:#ffe88c;
+
+
+font-size:.9rem;
+
+
+font-weight:700;
+
+
+}
+
+
+
+.rating{
+
+font-size:1.2rem;
+
+letter-spacing:3px;
+
+}
+
+
+
+/* Footer */
+
 
 .footer{
 
+
 margin-top:22px;
+
 
 font-size:.82rem;
 
-color:#d6d6d6;
+
+color:var(--muted);
+
+
+line-height:1.5;
+
+
+}
+@keyframes rippleEffect{
+
+from{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+opacity:1;
 
 }
 
-/* Animations */
 
-@keyframes bgMove{
+to{
+
+transform:
+translate(-50%,-50%)
+scale(15);
+
+opacity:0;
+
+}
+
+}
+  /* ================================
+   PART 6 - PREMIUM SPORTS EFFECTS
+================================ */
+
+
+/* Stadium scoreboard glow */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:4px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+var(--gold),
+
+var(--pink),
+
+transparent
+
+);
+
+
+animation:
+
+scoreGlow 4s linear infinite;
+
+
+}
+
+
+
+@keyframes scoreGlow{
+
 
 0%{
-background-position:0% 50%;
+
+transform:translateX(-100%);
+
 }
 
-50%{
-background-position:100% 50%;
-}
 
 100%{
-background-position:0% 50%;
-}
+
+transform:translateX(100%);
 
 }
 
-@keyframes float{
+
+}
+
+
+
+/* Floating mini sparkles */
+
+
+.spark{
+
+position:fixed;
+
+width:5px;
+
+height:5px;
+
+background:var(--gold);
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 15px var(--gold);
+
+opacity:.7;
+
+z-index:1;
+
+animation:
+
+sparkMove 9s linear infinite;
+
+}
+
+
+
+.spark.one{
+
+left:20%;
+
+bottom:10%;
+
+}
+
+
+.spark.two{
+
+left:70%;
+
+bottom:15%;
+
+animation-delay:2s;
+
+}
+
+
+.spark.three{
+
+right:15%;
+
+bottom:25%;
+
+animation-delay:4s;
+
+}
+
+
+
+@keyframes sparkMove{
+
 
 0%{
-transform:translateY(0px);
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+opacity:0;
+
 }
 
-50%{
-transform:translateY(-30px);
+
+20%{
+
+opacity:1;
+
 }
+
 
 100%{
-transform:translateY(0px);
-}
+
+transform:
+
+translateY(-500px)
+
+scale(2);
+
+opacity:0;
 
 }
 
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.05);
-}
-
-100%{
-transform:scale(1);
-}
 
 }
 
-@keyframes pinkFlow{
 
-0%{
-background-position:0% 50%;
+
+/* Better mobile touch */
+
+.telegram-btn{
+
+-webkit-tap-highlight-color:transparent;
+
+user-select:none;
+
 }
 
-50%{
-background-position:100% 50%;
+
+
+.telegram-btn:active{
+
+transform:scale(.96);
+
 }
 
-100%{
-background-position:0% 50%;
+
+
+/* Extra premium card depth */
+
+
+.card{
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.45),
+
+0 0 50px rgba(114,244,255,.08);
+
 }
+
+
+
+/* Smooth image rendering */
+
+
+.profile-ring img{
+
+image-rendering:auto;
+
+}
+
+
+
+/* Prevent animation overload on small screens */
+
+
+@media(max-width:380px){
+
+
+.card{
+
+padding:25px 18px;
+
+}
+
+
+.main-title{
+
+font-size:2rem;
+
+}
+
+
+.telegram-btn{
+
+font-size:.95rem;
+
+}
+
 
 }
 
@@ -367,82 +1730,446 @@ background-position:0% 50%;
 </head>
 
 <body>
+  <div class="stadium-light light-left"></div>
+
+<div class="stadium-light light-right"></div>
+
+<div class="stadium-floor"></div>
+
+
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+
+
+<div class="sport-ball cricket-ball">
+🏏
+</div>
+
+<div class="sport-ball tennis-ball">
+🎾
+</div>
+  <div class="spark one"></div>
+
+<div class="spark two"></div>
+
+<div class="spark three"></div>
+<!-- PROFILE SECTION START -->
+
 
 <div class="card">
+
+
+<div class="profile-area">
+
+
+<div class="profile-ring">
 
 <img
 src="dp.webp"
 alt="ECS Sir"
-class="dp"
-width="120"
-height="120"
 loading="eager"
-fetchpriority="high">
+width="130"
+height="130">
 
-<h1>ECS Sir</h1>
+</div>
+
+
+<div class="live-badge">
+
+<span class="live-dot"></span>
+
+LIVE
+
+</div>
+
+
+<h1 class="main-title">
+
+ECS Sir
+
+</h1>
+
 
 <div class="tagline">
+
 India's No 1 Tennis & Cricket Expert
+
 </div>
 
-<div class="counterBox">
 
-<div class="counterLabel">
+
+<div class="stats-box">
+
+
+<div class="stats-label">
+
 Subscribers
+
 </div>
 
-<div class="counter" id="counter">
+
+<div class="subscriber-count" id="subscriber">
+
 35,467
-</div>
 
 </div>
 
-<div class="desc">
+
+</div>
+
+
+</div>
+
+<!-- DESCRIPTION -->
+
+
+<div class="description">
+
 🏏 All Cricket & Tennis Matches Free Reports 🎾
+
 </div>
+
+
+
+<!-- TELEGRAM BUTTON -->
+
 
 <a
+
 href="https://t.me/+MZJneOamUc00YWJl"
-class="btn"
+
+class="telegram-btn"
+
 target="_blank"
+
 rel="noopener">
+
+
+<span>
+
 💖 Join Official Telegram
+
+</span>
+
+
 </a>
 
+
+
+
+<!-- TRUST SECTION -->
+
+
+<div class="trust-box">
+
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+
+35,490+ Members Already Joined
+
+</div>
+
+
+
+
+<!-- FOOTER -->
+
+
 <div class="footer">
-Daily Cricket & Tennis Reports
-</div>
+
+
+🏏 Cricket Reports
+
+&nbsp; • &nbsp;
+
+🎾 Tennis Reports
+
+
+<br>
+
+
+Free Match Analysis Updates
+
 
 </div>
 
-<script>
 
-const counter=document.getElementById("counter");
+</div>
 
-let value=35467;
-const end=35490;
+<!-- CARD CLOSE -->
 
-function animateCounter(){
+  <script>
+    /* =================================
+   ORGANIC SUBSCRIBER COUNTER
+================================= */
 
-if(value>=end) return;
 
-value++;
+const subscriber =
+document.getElementById("subscriber");
 
-counter.textContent=value.toLocaleString();
 
-let delay=150+Math.random()*420;
+let currentSubscribers = 35467;
 
-if(value>35484){
-delay=260+Math.random()*500;
+const targetSubscribers = 35490;
+
+
+
+function increaseSubscribers(){
+
+
+if(currentSubscribers >= targetSubscribers){
+
+return;
+
 }
 
-setTimeout(animateCounter,delay);
+
+currentSubscribers++;
+
+
+subscriber.textContent =
+currentSubscribers.toLocaleString();
+
+
+
+/*
+ Random delay makes it look
+ like real people joining
+*/
+
+
+let delay =
+300 + Math.random() * 900;
+
+
+
+/*
+ Slow down near the end
+*/
+
+
+if(currentSubscribers > 35482){
+
+delay =
+700 + Math.random() * 1400;
 
 }
 
-setTimeout(animateCounter,700);
+
+
+setTimeout(
+
+increaseSubscribers,
+
+delay
+
+);
+
+
+}
+
+
+
+/*
+ Start counter after page load
+*/
+
+setTimeout(
+
+increaseSubscribers,
+
+1200
+
+);
+
+
+
+
+
+/* =================================
+   ONLINE USERS ANIMATION
+================================= */
+
+
+/*
+ Creates live feeling numbers
+*/
+
+
+const onlineBox =
+document.querySelector(".trust-box");
+
+
+let onlineUsers = 1482;
+
+
+
+function updateOnline(){
+
+
+let change =
+Math.floor(
+
+Math.random()*7
+
+)-3;
+
+
+
+onlineUsers += change;
+
+
+
+if(onlineUsers < 1470){
+
+onlineUsers = 1470;
+
+}
+
+
+if(onlineUsers > 1500){
+
+onlineUsers = 1500;
+
+}
+
+
+
+/*
+ Add online number
+*/
+
+
+onlineBox.innerHTML = `
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+
+${currentSubscribers.toLocaleString()}+ Members Already Joined
+
+
+<br><br>
+
+
+🟢 ${onlineUsers.toLocaleString()} Online Now
+
+`;
+
+
+
+setTimeout(
+
+updateOnline,
+
+2500 + Math.random()*3000
+
+);
+
+
+}
+
+
+
+setTimeout(
+
+updateOnline,
+
+2000
+
+);
+
+
+
+
+
+/* =================================
+   TELEGRAM BUTTON RIPPLE EFFECT
+================================= */
+
+
+const telegramButton =
+document.querySelector(".telegram-btn");
+
+
+
+telegramButton.addEventListener(
+
+"click",
+
+function(e){
+
+
+const ripple =
+document.createElement("span");
+
+
+ripple.style.position="absolute";
+
+ripple.style.width="20px";
+
+ripple.style.height="20px";
+
+ripple.style.borderRadius="50%";
+
+ripple.style.background=
+"rgba(255,255,255,.7)";
+
+
+ripple.style.left =
+e.offsetX + "px";
+
+
+ripple.style.top =
+e.offsetY + "px";
+
+
+ripple.style.transform =
+"translate(-50%,-50%)";
+
+
+ripple.style.animation =
+"rippleEffect .6s linear";
+
+
+ripple.style.pointerEvents="none";
+
+
+
+this.appendChild(ripple);
+
+
+
+setTimeout(()=>{
+
+
+ripple.remove();
+
+
+},600);
+
+
+
+}
+
+);
+
+
 
 </script>
 
+
 </body>
+
 </html>
