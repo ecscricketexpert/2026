@@ -37,6 +37,7 @@ content="ecs.webp">
 content="https://ecscricketexpert.github.io/">
 
 <link rel="icon" href="favicon.ico">
+   <link rel="apple-touch-icon" href="ecs.webp">
 
 <link rel="preload"
 href="ecs.webp"
@@ -1733,6 +1734,137 @@ font-size:.95rem;
 
 
 }
+/* ================================
+   PART 8 - FINAL POLISH
+================================ */
+
+
+/* Prevent horizontal scrolling */
+
+html,
+body{
+
+max-width:100%;
+
+overflow-x:hidden;
+
+}
+
+
+/* Better mobile text rendering */
+
+body{
+
+-webkit-font-smoothing:antialiased;
+
+-moz-osx-font-smoothing:grayscale;
+
+}
+
+
+/* Improve card animation */
+
+.card{
+
+animation:
+
+cardEntrance .8s ease forwards;
+
+}
+
+
+
+@keyframes cardEntrance{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(25px)
+
+scale(.96);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+
+}
+
+
+/* Better Telegram tap experience */
+
+.telegram-btn{
+
+cursor:pointer;
+
+touch-action:manipulation;
+
+}
+
+
+/* Hide selection for app-like feel */
+
+.card{
+
+-webkit-user-select:none;
+
+user-select:none;
+
+}
+
+
+/* Small screen adjustment */
+
+
+@media(max-width:420px){
+
+
+body{
+
+padding:14px;
+
+}
+
+
+.profile-ring{
+
+width:125px;
+
+height:125px;
+
+}
+
+
+.main-title{
+
+font-size:2.1rem;
+
+}
+
+
+.subscriber-count{
+
+font-size:2rem;
+
+}
+
+
+}
 
 </style>
 
@@ -2173,8 +2305,6 @@ ripple.remove();
 }
 
 );
-
-
 
 // Prevent accidental double animation loading
 
